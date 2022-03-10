@@ -53,8 +53,8 @@ public class OsService {
 		OS newOS = new OS();
 		newOS.setId(osDTO.getId());
 		newOS.setObservacoes(osDTO.getObservacoes());
-		newOS.setPrioridade(Prioridade.toEnum(osDTO.getPrioridade()));
-		newOS.setStatus(Status.toEnum(osDTO.getStatus()));
+		newOS.setPrioridade(Prioridade.toEnum(osDTO.getPrioridade().getCod()));
+		newOS.setStatus(Status.toEnum(osDTO.getStatus().getCod()));
 
 		Tecnico tec = tecnicoService.findById(osDTO.getTecnico());
 		Cliente cli = clienteService.findById(osDTO.getCliente());
